@@ -40,3 +40,35 @@ body {
     padding-top: 5px;
     font-size: 16px;
 }
+
+.deadline-message {
+    visibility: hidden;
+    color: #396;
+    font-weight: 100;
+    font-size: 40px;
+    margin: 40px 0px 20px;
+}
+
+.visible {
+    display: block;
+}
+
+.hidden {
+    display: none;
+}
+
+.h1-hidden {
+   visibility: hidden;
+}
+
+.h1-visible {
+    visibility: visible;
+}
+
+#copyText {
+    padding: 6px 11px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #396;
+    color: #efefef;
+}
