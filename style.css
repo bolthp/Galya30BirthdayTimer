@@ -1,74 +1,129 @@
-body {
-    text-align: center;
-    background: #1000ec3b;
-    font-family: sans-serif;
-    font-weight: 100;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.countdown-title {
-    color: #396;
-    font-weight: 100;
-    font-size: 40px;
-    margin: 40px 0px 20px;
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .countdown {
-    font-family: sans-serif;
-    color: #fff;
-    display: inline-block;
-    font-weight: 100;
-    text-align: center;
-    font-size: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 30px;
 }
 
 .countdown-number {
-    padding: 10px;
-    border-radius: 3px;
-    background: #00bf96;
-    display: inline-block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 10px;
+  padding: 20px;
+  min-width: 120px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .countdown-time {
-    padding: 15px;
-    border-radius: 3px;
-    background: #00816a;
-    display: inline-block;
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 .countdown-text {
-    display: block;
-    padding-top: 5px;
-    font-size: 16px;
+  font-size: 1.2em;
+  opacity: 0.8;
 }
 
-.deadline-message {
-    visibility: hidden;
-    color: #396;
-    font-weight: 100;
-    font-size: 40px;
-    margin: 40px 0px 20px;
+button {
+  background: white;
+  color: #667eea;
+  border: none;
+  padding: 15px 30px;
+  font-size: 1.2em;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 20px;
+  font-weight: bold;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.visible {
-    display: block;
+button:hover {
+  background: #f8f9fa;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
 }
 
 .hidden {
-    display: none;
+  display: none !important;
 }
 
 .h1-hidden {
-   visibility: hidden;
+  display: none;
 }
 
 .h1-visible {
-    visibility: visible;
+  display: block;
+  animation: fadeIn 1s ease-in;
 }
 
-#copyText {
-    padding: 6px 11px;
-    font-size: 15px;
-    font-weight: bold;
-    background-color: #396;
-    color: #efefef;
+.deadline-message {
+  font-size: 3em;
+  margin: 40px 0;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8em;
+  }
+
+  .countdown {
+    gap: 10px;
+  }
+
+  .countdown-number {
+    min-width: 80px;
+    padding: 15px;
+  }
+
+  .countdown-time {
+    font-size: 2em;
+  }
+
+  .countdown-text {
+    font-size: 1em;
+  }
+
+  button {
+    padding: 12px 24px;
+    font-size: 1em;
+  }
 }
