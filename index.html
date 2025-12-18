@@ -1,35 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>⏳ Гале скоро 35</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<link rel="stylesheet" href="style.css">
-<h1 class="countdown-title">Гале ёбнет тридцатка через:</h1>
-<div id="countdown" class="countdown">
-  <div class="countdown-number">
-    <span class="days countdown-time"></span>
-    <span class="days-text countdown-text"></span>
-  </div>
-  <div class="countdown-number">
-    <span class="hours countdown-time"></span>
-    <span class="hours-text countdown-text"></span>
-  </div>
-  <div class="countdown-number">
-    <span class="minutes countdown-time"></span>
-    <span class="minutes-text countdown-text"></span>
-  </div>
-  <div class="countdown-number">
-    <span class="seconds countdown-time"></span>
-    <span class="seconds-text countdown-text"></span>
-  </div>
-</div>
-<h1 class="deadline-message" class="deadline-message">Ну всё, пиздец!</h1>
-<button id="copyText">Copy</button>
+    <h1 class="countdown-title">Гале ёбнет 35 через:</h1>
 
-<script src="main.js"></script>
+    <div id="countdown" class="countdown">
+      <div class="countdown-number">
+        <span class="days countdown-time"></span>
+        <span class="days-text countdown-text"></span>
+      </div>
+      <div class="countdown-number">
+        <span class="hours countdown-time"></span>
+        <span class="hours-text countdown-text"></span>
+      </div>
+      <div class="countdown-number">
+        <span class="minutes countdown-time"></span>
+        <span class="minutes-text countdown-text"></span>
+      </div>
+      <div class="countdown-number">
+        <span class="seconds countdown-time"></span>
+        <span class="seconds-text countdown-text"></span>
+      </div>
+    </div>
+
+    <h1 class="deadline-message hidden">Ну всё, пиздец!</h1>
+    <button id="copyText">Скопировать время</button>
+
+    <div style="margin-top: 20px; font-size: 14px; color: #666;">
+        <p>Локальное время: <span id="localTime"></span></p>
+        <p>Часовой пояс: <span id="timezone"></span></p>
+    </div>
+
+    <script src="main.js"></script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const localTimeEl = document.getElementById('localTime');
+            const timezoneEl = document.getElementById('timezone');
+
+            if (localTimeEl) {
+                localTimeEl.textContent = new Date().toString();
+            }
+
+            if (timezoneEl) {
+                timezoneEl.textContent = Intl.DateTimeFormat().resolvedOptions().timeZone;
+            }
+        });
+    </script>
 </body>
 </html>
-
